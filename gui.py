@@ -11,8 +11,7 @@ def path_button_click():
     
 def convert_button_click():
    result = main(path=root.file_path, password=table_entry.get())
-   result_label = ctk.CTkLabel(master=root,text=result,font=('Arial',15),bg_color='transparent')
-   result_label.place(relx = 0.3, y = 200, anchor=NW)
+   result_label.configure(text=result)
 
 # MAIN WINDOW
 root = ctk.CTk()
@@ -37,5 +36,8 @@ table_entry.place(relx=0.2,y=100,anchor=NW)
 
 convert_button = ctk.CTkButton(master=root, text='Unlock',command=convert_button_click)
 convert_button.place(relx=0.3, y=160, anchor=NW)
+
+result_label = ctk.CTkLabel(master=root,text='',font=('Arial',15),bg_color='transparent')   
+result_label.place(relx = 0.3, y = 200, anchor=NW)
 
 root.mainloop()
